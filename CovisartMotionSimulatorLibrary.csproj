@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Covisart R&amp;D Company</Authors>
+    <Product>Covisart Motion Simulator Library</Product>
+    <Description>CovisartMotionSimulatorLibrary for .Net Applications
+</Description>
+    <Copyright>COVISART </Copyright>
+    <PackageProjectUrl>https://github.com/covisart</PackageProjectUrl>
+    <PackageIcon>19895432.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/COVISART/SimulatorSDK</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>twincat; covisart; motion;</PackageTags>
+    <PackageReleaseNotes>init release</PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="FakesAssemblies\**" />
+    <EmbeddedResource Remove="FakesAssemblies\**" />
+    <None Remove="FakesAssemblies\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="envdte" Version="17.1.32210.191" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="TCatSysManagerLib">
+      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\TCatSysManagerLib\3.2.0.0__180016cd49e5e8c3\TCatSysManagerLib.dll</HintPath>
+    </Reference>
+    <Reference Include="TwinCAT.Ads">
+      <HintPath>..\..\..\..\..\..\TwinCAT\AdsApi\.NET\v4.0.30319\TwinCAT.Ads.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalDesignTimeBuildInput Remove="FakesAssemblies\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="19895432.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
