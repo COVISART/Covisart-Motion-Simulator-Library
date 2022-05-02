@@ -30,6 +30,6 @@ jobs:
           ./bin/Release/
           
     - name: Publish to Github Packages 
-      run: dotnet nuget add source --username Nobatgeldi --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/OWNER/index.json"
+      run: dotnet nuget push .\bin\Release\*.nupkg  --api-key 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 --source "github" --skip-duplicate
 
 
