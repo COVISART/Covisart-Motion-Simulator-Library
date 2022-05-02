@@ -10,8 +10,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    env:
-      SUPER_SECRET: ${{ secrets.PACKAGES }}
+
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
@@ -31,5 +30,6 @@ jobs:
           ./bin/Release/
           
     - name: Publish to Github Packages 
-      run: dotnet nuget push .\bin\Release\*.nupkg  --api-key "$SUPER_SECRET" --source "github"
+      run: dotnet nuget add source --username Nobatgeldi --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/OWNER/index.json"
+
 
