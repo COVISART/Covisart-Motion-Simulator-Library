@@ -10,7 +10,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    env:
+      SUPER_SECRET: ${{ secrets.PACKAGES }}
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
@@ -28,3 +29,7 @@ jobs:
         name: build-result
         path: |
           ./bin/Release/
+    - name: Publish to Github Packages 
+
+      run: dotnet nuget push .\bin\Release\*.nupkg  --api-key "$SUPER_SECRET" --source "github"
+
