@@ -8,11 +8,11 @@ namespace CovisartMotionSimulatorLibrary
     /// </summary>
     public class TwinCatVariable<T> : ITwinCatVariable
     {
-        private readonly TcAdsClient _adsClient;
+        private readonly AdsClient _adsClient;
         /// <summary>
         /// Plc Variable ID in PlC runtime.
         /// </summary>
-        public int TargetId { get; set; }
+        public uint TargetId { get; set; }
         /// <summary>
         /// Global name of plc variable. 
         /// </summary>
@@ -34,7 +34,7 @@ namespace CovisartMotionSimulatorLibrary
         public object _Value { get; set; }
         public string ValueType { get; set; }
         public string EngineType { get; set; }
-        public TwinCatVariable(TcAdsClient adsClient, string targetTag, string engineType)
+        public TwinCatVariable(AdsClient adsClient, string targetTag, string engineType)
         {
             EngineType = engineType;
             _adsClient = adsClient;
@@ -47,7 +47,7 @@ namespace CovisartMotionSimulatorLibrary
             ValueType = typeof(T).Name;
         }
 
-        public TwinCatVariable(TcAdsClient adsClient, string targetTag, string engineType, List<TwinCatNotifier> notificationList)
+        public TwinCatVariable(AdsClient adsClient, string targetTag, string engineType, List<TwinCatNotifier> notificationList)
             : this(adsClient, targetTag, engineType)
         {
             notificationList?.Add(new TwinCatNotifier(typeof(T), TargetTagName, ValueChanger));
@@ -83,7 +83,7 @@ namespace CovisartMotionSimulatorLibrary
         private TwinCatVariable<UInt16> ErrorIdVariable;
         public string ErrorDescription { get; internal set; }
         public UInt16 ErrorId { get; internal set; }
-        public TwinCatErrorVariable(TcAdsClient adsClient, string targetTag, string engineType, TwinCatNotifierManager notificationList, TwinCatVariable<UInt16> ErrorIdVariable) 
+        public TwinCatErrorVariable(AdsClient adsClient, string targetTag, string engineType, TwinCatNotifierManager notificationList, TwinCatVariable<UInt16> ErrorIdVariable) 
             : base(adsClient, targetTag, engineType, notificationList)
         {
             this.ErrorIdVariable = ErrorIdVariable;

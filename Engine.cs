@@ -148,7 +148,7 @@ namespace CovisartMotionSimulatorLibrary
 
         public string Name { get; }
 
-        public Engine(TcAdsClient adsClient, string engineType, TwinCatNotifierManager notificationList, string engineInfo)
+        public Engine(AdsClient adsClient, string engineType, TwinCatNotifierManager notificationList, string engineInfo)
         {
             Name = engineInfo;
             this.engineType = engineType.ToUpper();

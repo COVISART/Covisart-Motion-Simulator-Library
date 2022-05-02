@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0-windows</TargetFramework>
@@ -14,39 +14,24 @@
     <PackageProjectUrl>https://github.com/covisart</PackageProjectUrl>
     <PackageIcon>19895432.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/COVISART/SimulatorSDK</RepositoryUrl>
+    <RepositoryUrl>https://github.com/COVISART/Covisart-Motion-Simulator-Library</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>twincat; covisart; motion;</PackageTags>
     <PackageReleaseNotes>init release</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <AssemblyVersion>1.0.1.1</AssemblyVersion>
+    <FileVersion>1.0.1.1</FileVersion>
+    <Version>1.01.100</Version>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="FakesAssemblies\**" />
-    <EmbeddedResource Remove="FakesAssemblies\**" />
-    <None Remove="FakesAssemblies\**" />
-  </ItemGroup>
-
+    
   <ItemGroup>
     <Content Include="icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Beckhoff.TwinCAT.Ads" Version="6.0.102" />
     <PackageReference Include="envdte" Version="17.1.32210.191" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="TCatSysManagerLib">
-      <HintPath>..\..\..\..\..\..\Windows\assembly\GAC_MSIL\TCatSysManagerLib\3.2.0.0__180016cd49e5e8c3\TCatSysManagerLib.dll</HintPath>
-    </Reference>
-    <Reference Include="TwinCAT.Ads">
-      <HintPath>..\..\..\..\..\..\TwinCAT\AdsApi\.NET\v4.0.30319\TwinCAT.Ads.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <AdditionalDesignTimeBuildInput Remove="FakesAssemblies\**" />
   </ItemGroup>
 
   <ItemGroup>

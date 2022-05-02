@@ -9,9 +9,9 @@ namespace CovisartMotionSimulatorLibrary.TwinCatNotification
     /// </summary>
     public class TwinCatNotifierManager: List<TwinCatNotifier>
     {
-        TcAdsClient adsClient;
+        private readonly AdsClient _adsClient;
 
-        public TwinCatNotifierManager(TcAdsClient adsClient) => this.adsClient = adsClient;
+        public TwinCatNotifierManager(AdsClient adsClient) => this._adsClient = adsClient;
         BinaryReader binRead;
         private AdsStream dataStream;
         public void InitializeNotifier()
@@ -19,8 +19,8 @@ namespace CovisartMotionSimulatorLibrary.TwinCatNotification
             dataStream = new AdsStream();
             binRead = new BinaryReader(dataStream, Encoding.ASCII);
 
-            int offset = 0;
-            adsClient.AdsNotification += AdsClient_AdsNotification;
+            var offset = 0;
+            _adsClient.AdsNotification += AdsClient_AdsNotification!;
             foreach (var item in this)
             {
                 var length = 1;//bool
@@ -34,9 +34,9 @@ namespace CovisartMotionSimulatorLibrary.TwinCatNotification
                     length = 2;
                 }
 
-                adsClient.AddDeviceNotification(item.targetTagName, dataStream, offset, length, AdsTransMode.OnChange,
-                    100, 0, item);
-
+                //_adsClient.AddDeviceNotification(item.targetTagName, dataStream, offset, length, AdsTransMode.OnChange, 100, 0, item);
+                _adsClient.AddDeviceNotification(item.targetTagName, length,
+                    new NotificationSettings(AdsTransMode.OnChange, 100, 0), item);
                 offset += length;
             }
 
@@ -48,7 +48,7 @@ namespace CovisartMotionSimulatorLibrary.TwinCatNotification
         {
             try
             {
-                e.DataStream.Position = e.Offset;
+                //e.DataStream.Position = e.Offset;
 
                 TwinCatNotifier notifier = (TwinCatNotifier)e.UserData;
 

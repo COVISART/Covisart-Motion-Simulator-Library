@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using CovisartMotionSimulatorLibrary.TwinCatNotification;
 using EnvDTE;
-using TCatSysManagerLib;
+//using TCatSysManagerLib;
 using TwinCAT.Ads;
 using Thread = System.Threading.Thread;
 
@@ -13,7 +13,7 @@ namespace CovisartMotionSimulatorLibrary
     /// </summary>
     public partial class TwinCatHelper
     {
-        public TcAdsClient AdsClient;
+        public AdsClient AdsClient;
         public TwinCatVariable<bool> RestartTwincat;
         /// <summary>
         /// Motor değişkenlerinin barındaran değişken.
@@ -21,7 +21,7 @@ namespace CovisartMotionSimulatorLibrary
         /// </summary>
         public Dictionary<string,Engine> engines = new Dictionary<string, Engine>();
 
-        private ITcSysManager7 _sysMan;
+        //private ITcSysManager7 _sysMan;
         private readonly EnvDTE.Solution _sol;
 
         private readonly bool _isTcXaeShellWorking;
@@ -115,7 +115,7 @@ namespace CovisartMotionSimulatorLibrary
             if (TwinCatState) return TwinCatState;//throw new CovisartWarningException("The connection is already exist.");
             var start = DateTime.Now;
             ClearRamIfExist();
-            AdsClient = new TcAdsClient();
+            AdsClient = new AdsClient();
             if(netId.Length<7)
                 AdsClient.Connect(srvPort);
             else
@@ -581,7 +581,7 @@ namespace CovisartMotionSimulatorLibrary
             }
         }
 
-        /// <summary>
+        /*/// <summary>
         /// Plc yi yeniden başlatır. Xae shell kullanır.
         /// </summary>
         public object HardRestartTwinCat()
@@ -606,7 +606,7 @@ namespace CovisartMotionSimulatorLibrary
             {
                 return e.Message;
             }
-        }
+        }*/
 
 
     }

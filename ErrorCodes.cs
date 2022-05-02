@@ -1130,14 +1130,7 @@ IO working counter error (WC state), for example due to real-time errors, EtherC
 
         internal static ErrorCode Get(ushort value)
         {
-            if (errorCodes.TryGetValue(value, out var errorCode))
-            {
-                return errorCode;
-            }
-            else
-            {
-                return null;
-            }
+            return (errorCodes.TryGetValue(value, out var errorCode) ? errorCode : null)!;
         }
     }
 }
