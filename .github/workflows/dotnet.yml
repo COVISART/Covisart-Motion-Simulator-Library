@@ -28,8 +28,3 @@ jobs:
         name: build-result
         path: |
           ./bin/Release/
-          
-    - name: Publish to Github Packages 
-      env: # Or as an environment variable
-        super_secret: ${{ secrets.PACKAGES }}
-      run: dotnet nuget push ./bin/Release/*.nupkg --source "github"
