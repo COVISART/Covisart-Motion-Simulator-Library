@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>CovisartMotionSimulatorSDK</id>
+    <version>1.1.103</version>
+    <title>Covisart Motion Simulator SDK</title>
+    <authors>Covisart</authors>
+	<icon>19895432.png</icon>
+    <readme>README.md</readme>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/covisart/</projectUrl>
+	<repository type="git" url="https://github.com/COVISART/Covisart-Motion-Simulator-Library" />
+    <description>Covisart Motion Simulator Software Development Kit</description>
+    <releaseNotes>init release.</releaseNotes>
+    <copyright>Copyright ©  2022</copyright>
+    <tags>twincat covisart motion</tags>
+	<dependencies>
+      <group targetFramework="net472">
+        <dependency id="Beckhoff.TwinCAT.Ads" version="6.0.102" exclude="Build,Analyzers" />
+        <dependency id="envdte" version="17.1.32210.191" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
