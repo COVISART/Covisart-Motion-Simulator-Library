@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>CovisartMotionSimulatorSDK</id>
-    <version>1.1.108</version>
+    <version>1.1.108.1</version>
     <title>Covisart Motion Simulator SDK</title>
     <authors>Covisart</authors>
 	<icon>content\icon.png</icon>
@@ -20,20 +20,12 @@
         <dependency id="Beckhoff.TwinCAT.Ads" version="6.0.102" exclude="Build,Analyzers" />
         <dependency id="Beckhoff.TwinCAT.Ads.Abstractions" version="6.0.102" exclude="Build,Analyzers" />
         <dependency id="Beckhoff.TwinCAT.Ads.Server" version="6.0.102" exclude="Build,Analyzers" />
-        <dependency id="envdte" version="17.1.32210.191" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net6.0">
+        <dependency id="Beckhoff.TwinCAT.Ads" version="6.0.102" exclude="Build,Analyzers" />
+        <dependency id="Beckhoff.TwinCAT.Ads.Abstractions" version="6.0.102" exclude="Build,Analyzers" />
+        <dependency id="Beckhoff.TwinCAT.Ads.Server" version="6.0.102" exclude="Build,Analyzers" />
       </group>
     </dependencies>
-	<frameworkAssemblies>
-      <frameworkAssembly assemblyName="Microsoft.CSharp" targetFramework=".NETFramework4.7.2" />
-      <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETFramework4.7.2" />
-      <frameworkAssembly assemblyName="System.Configuration" targetFramework=".NETFramework4.7.2" />
-      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework4.7.2" />
-      <frameworkAssembly assemblyName="System.Data" targetFramework=".NETFramework4.7.2" />
-      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.7.2" />
-      <frameworkAssembly assemblyName="System.Drawing" targetFramework=".NETFramework4.7.2" />
-      <frameworkAssembly assemblyName="System.Security" targetFramework=".NETFramework4.7.2" />
-      <frameworkAssembly assemblyName="System.Web" targetFramework=".NETFramework4.7.2" />
-      <frameworkAssembly assemblyName="System.Xml" targetFramework=".NETFramework4.7.2" />
-    </frameworkAssemblies>
   </metadata>
 </package>
