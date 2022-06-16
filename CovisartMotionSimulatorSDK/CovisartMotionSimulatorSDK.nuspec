@@ -5,23 +5,18 @@
     <version>1.1.108.1</version>
     <title>Covisart Motion Simulator SDK</title>
     <authors>Covisart</authors>
-	<icon>content\icon.png</icon>
-    <readme>content\README.md</readme>
+	  <icon>icon.png</icon>
+    <readme>README.md</readme>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-    <projectUrl>https://github.com/covisart/</projectUrl>
-	<repository type="git" url="https://github.com/COVISART/Covisart-Motion-Simulator-Library" />
+    <projectUrl>https://github.com/COVISART/CovisartMotionSimulatorSDK/</projectUrl>
+	  <repository type="git" url="https://github.com/COVISART/CovisartMotionSimulatorSDK" />
     <description>Covisart Motion Simulator Software Development Kit</description>
     <releaseNotes>init release.</releaseNotes>
     <copyright>Copyright ©  2022</copyright>
     <tags>twincat covisart motion</tags>
-	<dependencies>
-      <group targetFramework=".NETFramework4.7.2">
-        <dependency id="Beckhoff.TwinCAT.Ads" version="6.0.102" exclude="Build,Analyzers" />
-        <dependency id="Beckhoff.TwinCAT.Ads.Abstractions" version="6.0.102" exclude="Build,Analyzers" />
-        <dependency id="Beckhoff.TwinCAT.Ads.Server" version="6.0.102" exclude="Build,Analyzers" />
-      </group>
-      <group targetFramework="net6.0">
+	  <dependencies>
+      <group targetFramework=".NETFramework4.7">
         <dependency id="Beckhoff.TwinCAT.Ads" version="6.0.102" exclude="Build,Analyzers" />
         <dependency id="Beckhoff.TwinCAT.Ads.Abstractions" version="6.0.102" exclude="Build,Analyzers" />
         <dependency id="Beckhoff.TwinCAT.Ads.Server" version="6.0.102" exclude="Build,Analyzers" />
