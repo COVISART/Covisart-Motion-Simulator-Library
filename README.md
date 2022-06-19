@@ -1,4 +1,4 @@
-# Motion Simulator CT-360/3
+# Motion Simulator NGS-360-3
 
 ## Mechanical System
 
