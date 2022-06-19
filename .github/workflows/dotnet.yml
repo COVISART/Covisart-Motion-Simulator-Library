@@ -34,4 +34,4 @@ jobs:
       with:
         name: build-result
         path: |
-          .bin\Release\
+          bin\Release\
