@@ -34,4 +34,11 @@ jobs:
       with:
         name: build-result
         path: |
-          ./bin/Release/
+          bin\Release\
+          
+    - name: Publish to Github Packages 
+      run: dotnet nuget add source --username Nobatgeldi --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name CovisartMotionSimulatorSDK "https://nuget.pkg.github.com/COVISART/index.json" |
+           dotnet pack --configuration Release |
+           dotnet nuget push "CovisartMotionSimulatorSDK.nupkg"  --api-key YOUR_GITHUB_PAT --source "github"
+
+
