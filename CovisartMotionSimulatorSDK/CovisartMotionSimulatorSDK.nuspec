@@ -17,9 +17,7 @@
     <tags>twincat covisart motion</tags>
 	  <dependencies>
       <group targetFramework=".NETFramework4.7">
-        <dependency id="Beckhoff.TwinCAT.Ads" version="6.0.102" exclude="Build,Analyzers" />
-        <dependency id="Beckhoff.TwinCAT.Ads.Abstractions" version="6.0.102" exclude="Build,Analyzers" />
-        <dependency id="Beckhoff.TwinCAT.Ads.Server" version="6.0.102" exclude="Build,Analyzers" />
+        <dependency id="Beckhoff.TwinCAT.Ads" version="6.0.216" exclude="Build,Analyzers" />
       </group>
     </dependencies>
   </metadata>

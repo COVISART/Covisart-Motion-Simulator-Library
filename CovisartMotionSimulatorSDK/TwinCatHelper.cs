@@ -64,7 +64,8 @@ namespace CovisartMotionSimulatorSDK
             {
                 try
                 {
-                    engines["X"].CurrentPosition.Get();
+                    if(engines.Count>0)
+                        engines["X"].CurrentPosition.Get();
                     if (!TwinCatState)
                     {
                         OnTwincatConnectionStateChanged?.Invoke(true);
